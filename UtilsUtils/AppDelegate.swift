@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Doodling
+//  UtilsUtils
 //
 //  Created by Fredrik Bystam on 2018-10-04.
 //  Copyright © 2018 Fredrik Bystam. All rights reserved.
