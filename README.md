@@ -48,6 +48,8 @@ Personally I think we should aim to create a more explicit ownership graphs. I t
 ### Managing objects using Locks & Keys in Swift
 A blog post (and a talk) which pitches a way to control relationships and the lifecycle of types which "exist broadly in the app, but not always". This is a **GREAT** piece of inspiration on how to get rid of global state in the app, and the proposed solution is extremely simple. No libraries or frameworks needed, just a plain old object and design pattern. 
 
+In the example app, I didn't go as far as calling the ownership object "factories". Instead I made them simpler and called them `XyzContext`. Similar to how the dependency injection pattern at the bottom of this page works.
+
 https://www.swiftbysundell.com/posts/managing-objects-using-locks-and-keys-in-swift
 https://www.youtube.com/watch?v=a1g3k3NObkE&t=1128s
 
@@ -68,7 +70,7 @@ http://khanlou.com/2015/10/coordinators-redux/
 https://youtu.be/ujOc3a7Hav0?t=879
 
 
-###
+### Using protocol compositon for dependency injection
 A very simple way of managing dependency injection, without using any crazy 3rd party stuff. It's small, it's ergonomic and really readable - but most of us probably wouldn't havae  
 
 http://merowing.info/2017/04/using-protocol-compositon-for-dependency-injection/
