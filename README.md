@@ -2,6 +2,12 @@
 
 This is a sample app which combines a few concepts as pitched by different blog posts and talks, all of which tries to reduce some of the pain points found in the static/global behavior of the iOS apps.
 
+The key to reading the code is opening the `AppDelegate` and the `RootCoordinator`, and looking at how it defines the root of the ownership graph.
+
+The `CallProvider`  and  `MeetingCoordinator` is an example how one could handle an incoming call. Notice how `MeetingCoordinator` is owned by `AuthorizedCoordinator`.
+
+The `OnfidoController` and `OnfidoViewController` is also a no-op example of how a real controller and view controller can be set up to benefit from some simple dependency injection and how they would interact with the coordinator that created it. 
+
 ## Goal
 
 ### Expand the toolbox beyond MVC and utils
@@ -33,6 +39,9 @@ Utils and statics (currently) creates really fuzzy behavior with regards to:
   * Shared state is quite often an implicite side-effect of some types. There are APIs which implicitly set user and session IDs as static state side effects when performing other calls.
 
 A lot of code tries to show new views on "the current top view controller". Some of these even specifically filter out specific view controllers where their new views shouldn't be displayed. This creates a system without ownership, which in turn makes for a world where it's hard to read the intent and purpose of code.
+
+### Ownership
+Personally I think we should aim to create a more explicit ownership graphs. I think the hardest pieces of 
 
 ## Inspiration
 

@@ -20,20 +20,20 @@ final class AuthorizedCoordinator: Coordinator {
     init(container: UIViewController, context: AuthorizedContext) {
         self.container = container
         self.context = context
-
-        listenToIncomingCalls()
     }
 
     func stop() {}
+
+    func start() {
+        embed(authorizedViewController, inside: container)
+
+        listenToIncomingCalls()
+    }
 
     private func listenToIncomingCalls() {
         context.callProvider.onCall.listen(with: self, { this, call in
             this.showIncomingCall()
         }).bindLifetime(to: bag)
-    }
-
-    func start() {
-        embed(authorizedViewController, inside: container)
     }
 
     private func showBookingFlow() {
