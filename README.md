@@ -41,7 +41,7 @@ Utils and statics (currently) creates really fuzzy behavior with regards to:
 A lot of code tries to show new views on "the current top view controller". Some of these even specifically filter out specific view controllers where their new views shouldn't be displayed. This creates a system without ownership, which in turn makes for a world where it's hard to read the intent and purpose of code.
 
 ### Ownership
-Personally I think we should aim to create a more explicit ownership graphs. I think the hardest pieces of 
+Personally I think we should aim to create a more explicit ownership graph. It's hard to summarize exactly what steps would be taken, but I think moving more towards "something" (maybe coordinators) owning VCs and dependencies would give a great starting point towards that. 
 
 ## Inspiration
 
